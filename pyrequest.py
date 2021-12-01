@@ -2,6 +2,7 @@
 
 import requests
 import json
+import random
 
 response = requests.get('http://trivia-api.thedundies.com/questions/')
 
@@ -25,3 +26,14 @@ print (json_data["answers"][0]["answer"], json_data["answers"][0]["correct"])
 print (json_data["answers"][1]["answer"], json_data["answers"][1]["correct"])
 print (json_data["answers"][2]["answer"], json_data["answers"][2]["correct"])
 print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
+
+print ("")
+print ("")
+
+# Number zero is always true. I need to shuffle them a bit. 
+number = [0,1,2,3]
+random.shuffle(number)
+
+for i in number:
+    #print (i)
+    print (json_data["answers"][i]["answer"], json_data["answers"][i]["correct"])
