@@ -5,7 +5,8 @@ import json
 
 response = requests.get('http://trivia-api.thedundies.com/questions/')
 
-# TM doesn't send back a json object that's recognized by python. 
+# TM doesn't send back a json object that's recognized as a dict by python.
+# It shows as a list 
 # Strip off the leading [ and trailing ] 
 # Now python sees this as a dict 
 # Proceed to get individual sections. 
