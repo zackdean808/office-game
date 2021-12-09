@@ -21,7 +21,6 @@
           <object class="GtkBox" id="gtkQuestionBox">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="homogeneous">True</property>
             <child>
               <object class="GtkImage" id="gtkOfficeLogo">
                 <property name="visible">True</property>
