@@ -27,7 +27,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="margin-right">99</property>
-                <property name="pixbuf">images/office_logo.png</property>
+                <property name="pixbuf">images/office_logo-resize.png</property>
               </object>
               <packing>
                 <property name="expand">False</property>
