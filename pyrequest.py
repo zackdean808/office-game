@@ -31,9 +31,24 @@ print ("")
 print ("")
 
 # Number zero is always true. I need to shuffle them a bit. 
-number = [0,1,2,3]
-random.shuffle(number)
+choice_shuffle = [0,1,2,3]
+random.shuffle(choice_shuffle)
 
-for i in number:
-    #print (i)
-    print (json_data["answers"][i]["answer"], json_data["answers"][i]["correct"])
+choice_order = [1,2,3,4]
+
+for i in choice_order:
+    for j in choice_shuffle:
+        #print (i)
+        print (str(choice_order[i]) + ". " + json_data["answers"][j]["answer"], json_data["answers"][j]["correct"])
+
+
+while True:
+    try:
+        user_choice = int(input("Select an answer: "))
+        break
+    except ValueError:
+        print("Please input integer only...")  
+        continue
+
+
+#if (user_choice == )
