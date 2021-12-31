@@ -30,21 +30,20 @@ print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
 print ("")
 print ("")
 
-# Number zero is always true. I need to shuffle them a bit. 
-choice_shuffle = [0,1,2,3]
-random.shuffle(choice_shuffle)
+ql = []
 
-choice_order = [1,2,3,4]
+for i in (1,2,3,4):
+    t = i - 1
+    print (t)
+    ql.append([json_data["answers"][t]["answer"], json_data["answers"][t]["correct"]])
 
-for i in choice_order:
-    for j in choice_shuffle:
-        #print (i)
-        print (str(choice_order[i]) + ". " + json_data["answers"][j]["answer"], json_data["answers"][j]["correct"])
+
+print (ql)
 
 
 while True:
     try:
-        user_choice = int(input("Select an answer: "))
+        user_choice = int(input("Select an answer: "))                     
         break
     except ValueError:
         print("Please input integer only...")  
