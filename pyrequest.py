@@ -34,11 +34,16 @@ ql = []
 
 for i in (1,2,3,4):
     t = i - 1
-    print (t)
     ql.append([json_data["answers"][t]["answer"], json_data["answers"][t]["correct"]])
 
+random.shuffle(ql)
+#print (ql)
 
-print (ql)
+for i in (0,1,2,3):
+    uc = i + 1
+    print(uc, ql[i][0])
+
+
 
 
 while True:
