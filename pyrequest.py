@@ -43,9 +43,6 @@ for i in (0,1,2,3):
     uc = i + 1
     print(uc, ql[i][0])
 
-
-
-
 while True:
     try:
         user_choice = int(input("Select an answer: "))                     
@@ -53,7 +50,6 @@ while True:
     except ValueError:
         print("Please input integer only...")  
         continue
-
 
 if (user_choice == 1):
     if (ql[0][1] == True):
