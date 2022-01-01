@@ -55,4 +55,25 @@ while True:
         continue
 
 
-#if (user_choice == )
+if (user_choice == 1):
+    if (ql[0][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+elif (user_choice == 2):
+    if (ql[1][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+elif (user_choice == 3):
+    if (ql[2][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+elif (user_choice == 4):
+    if (ql[3][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+else:
+    print ("outer false")
