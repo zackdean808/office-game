@@ -22,13 +22,13 @@ print (json_data["question_id"])
 print (json_data["question"])
 
 # print the answers and correct value 
-print (json_data["answers"][0]["answer"], json_data["answers"][0]["correct"])
-print (json_data["answers"][1]["answer"], json_data["answers"][1]["correct"])
-print (json_data["answers"][2]["answer"], json_data["answers"][2]["correct"])
-print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
+#print (json_data["answers"][0]["answer"], json_data["answers"][0]["correct"])
+#print (json_data["answers"][1]["answer"], json_data["answers"][1]["correct"])
+#print (json_data["answers"][2]["answer"], json_data["answers"][2]["correct"])
+#print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
 
-print ("")
-print ("")
+#print ("")
+#print ("")
 
 ql = []
 
