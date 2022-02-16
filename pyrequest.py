@@ -19,14 +19,28 @@ def get_api_response():
     return json_data
 
 def print_debug_info(json_data):
-        print (json_data["question_id"])
-        # print the answers and correct value 
-        print (json_data["answers"][0]["answer"], json_data["answers"][0]["correct"])
-        print (json_data["answers"][1]["answer"], json_data["answers"][1]["correct"])
-        print (json_data["answers"][2]["answer"], json_data["answers"][2]["correct"])
-        print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
-        print ("")
-        print ("")
+    print (json_data["question_id"])
+    # print the answers and correct value 
+    print (json_data["answers"][0]["answer"], json_data["answers"][0]["correct"])
+    print (json_data["answers"][1]["answer"], json_data["answers"][1]["correct"])
+    print (json_data["answers"][2]["answer"], json_data["answers"][2]["correct"])
+    print (json_data["answers"][3]["answer"], json_data["answers"][3]["correct"])
+    print ("")
+    print ("")
+
+def shuffle_answers(json_data):
+    question_list = []
+    shuffled_list = []
+    for i in (1,2,3,4):
+        t = i - 1
+        question_list.append([json_data["answers"][t]["answer"], json_data["answers"][t]["correct"]])
+
+    random.shuffle(question_list)
+   
+    for i in (0,1,2,3):
+        shuffled_list.append(question_list[i])
+
+    return shuffled_list
 
 
 if __name__ == "__main__":
@@ -36,29 +50,29 @@ if __name__ == "__main__":
     if DEBUG == True:
         print_debug_info(json_data)
 
+    shuffled_answers = shuffle_answers(json_data)
+    
     # print the question 
     print (json_data["question"])
 
-    ql = []
-
-    for i in (1,2,3,4):
-        t = i - 1
-        ql.append([json_data["answers"][t]["answer"], json_data["answers"][t]["correct"]])
-
-    random.shuffle(ql)
-    #print (ql)
-
     for i in (0,1,2,3):
-        uc = i + 1
-        print(uc, ql[i][0])
-
+      uc = i + 1
+      print(uc, shuffled_answers[i][0])
+    
     while True:
         try:
             user_choice = int(input("Select an answer: ")) 
             break
         except ValueError:
-            print("Please input integer only...")  
-            continue
+            print("Please input integer only...")
+            continue  
+
+    
+
+
+    ql = shuffled_answers
+
+
 
     if (user_choice == 1):
         if (ql[0][1] == True):
