@@ -4,6 +4,7 @@ import requests
 import json
 import random
 
+
 DEBUG = False
 
 def get_api_response():
@@ -80,6 +81,7 @@ if __name__ == "__main__":
     # print the question 
     print (json_data["question"])
 
+    # print the shuffled answers 
     for i in (0,1,2,3):
       uc = i + 1
       print(uc, shuffled_answers[i][0])
