@@ -74,19 +74,19 @@ def validate_answer(ql, user_choice):
             print ("False")
 
 class Handler: 
-    def on_mainWindow_destroy(self, *arg):
+    def on_mainWindow_destroy(self, *args):
         gtk.main_quit()
 
-    def on_buttonA_clicked(self, *args):
+    def on_choice1_clicked(self, *args):
         print ("a")
     
-    def on_buttonB_clicked(self, *args):
+    def on_choice2_clicked(self, *args):
         print ("b")
 
-    def on_buttonC_clicked(self, *args):
+    def on_choice3_clicked(self, *args):
         print ("c")
 
-    def on_buttonD_clicked(self, *args):
+    def on_choice4_clicked(self, *args):
         print ("d")
 
 
@@ -112,6 +112,20 @@ if __name__ == "__main__":
 
     question_label = builder.get_object("gtkQuestionLabel")
     question_label.set_text(str(json_data["question"]))
+
+
+    choice1_button = builder.get_object("choice1")
+    choice1_button.set_label(str(shuffled_answers[0][0]))
+
+    choice2_button = builder.get_object("choice2")
+    choice2_button.set_label(str(shuffled_answers[1][0]))
+
+    choice3_button = builder.get_object("choice3")
+    choice3_button.set_label(str(shuffled_answers[2][0]))
+
+    choice4_button = builder.get_object("choice4")
+    choice4_button.set_label(str(shuffled_answers[3][0]))
+
 
     gtk.main()
     
