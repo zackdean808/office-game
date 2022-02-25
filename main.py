@@ -1,8 +1,14 @@
 #!/usr/bin/python
 
+from curses import window
 import requests
 import json
 import random
+
+# oh look gtk stuff
+import gi 
+gi.require_version("Gtk","3.0")
+from gi.repository import Gtk as gtk
 
 
 DEBUG = False
@@ -67,32 +73,50 @@ def validate_answer(ql, user_choice):
         else:
             print ("False")
 
+class Handler: 
+    def on_mainWindow_destroy(self, *arg):
+        gtk.main_quit()
+
+    def on_buttonA_clicked(self, *args):
+        print ("a")
+    
+    def on_buttonB_clicked(self, *args):
+        print ("b")
+
+    def on_buttonC_clicked(self, *args):
+        print ("c")
+
+    def on_buttonD_clicked(self, *args):
+        print ("d")
+
+
 
 
 if __name__ == "__main__":
+
     json_data = get_api_response()
 
-    # print the question id
     if DEBUG == True:
         print_debug_info(json_data)
-
+    
     shuffled_answers = shuffle_answers(json_data)
+
+    gladeFile = "./gtk-files/office-game.glade"
     
-    # print the question 
-    print (json_data["question"])
+    builder = gtk.Builder()
+    builder.add_from_file(gladeFile)
+    builder.connect_signals(Handler())
 
-    # print the shuffled answers 
-    for i in (0,1,2,3):
-      uc = i + 1
-      print(uc, shuffled_answers[i][0])
+    window = builder.get_object("mainWindow")
+    window.show_all()
+
+    question_label = builder.get_object("gtkQuestionLabel")
+    question_label.set_text(str(json_data["question"]))
+
+    gtk.main()
     
-    while True:
-        try:
-            user_choice = int(input("Select an answer: ")) 
-            break
-        except ValueError:
-            print("Please input integer only...")
-            continue  
 
-    validate_answer(shuffled_answers,user_choice)
 
+    #validate_answer(shuffled_answers,user_choice)
+
+    
