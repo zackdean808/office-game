@@ -40,7 +40,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">text</property>
-                <property name="justify">center</property>
+                <property name="wrap">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -61,12 +61,12 @@
             <property name="can-focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="buttonA">
+              <object class="GtkButton" id="choice1">
                 <property name="label" translatable="yes">A</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="on_buttonA_clicked" swapped="no"/>
+                <signal name="clicked" handler="on" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -75,12 +75,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="buttonB">
+              <object class="GtkButton" id="choice2">
                 <property name="label" translatable="yes">B</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="on_buttonB_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_choice2_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -89,12 +89,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="buttonC">
+              <object class="GtkButton" id="choice3">
                 <property name="label" translatable="yes">C</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="on_buttonC_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_choice3_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -103,12 +103,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="buttonD">
+              <object class="GtkButton" id="choice4">
                 <property name="label" translatable="yes">D</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="on_buttonD_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_choice4_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
