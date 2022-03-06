@@ -81,7 +81,7 @@ def choice2_clicked(data):
 def choice3_clicked(data): 
     print("clicked")
 
-def choice3_clicked(data): 
+def choice4_clicked(data): 
     print("clicked")
 
 
