@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from curses import window
 import requests
 import json
 import random
@@ -73,22 +72,17 @@ def validate_answer(ql, user_choice):
         else:
             print ("False")
 
-class Handler: 
-    def on_mainWindow_destroy(self, *args):
-        gtk.main_quit()
+def choice1_clicked(data): 
+    print("clicked")
 
-    def on_choice1_clicked(self, *args):
-        print ("a")
-    
-    def on_choice2_clicked(self, *args):
-        print ("b")
+def choice2_clicked(data): 
+    print("clicked")
 
-    def on_choice3_clicked(self, *args):
-        print ("c")
+def choice3_clicked(data): 
+    print("clicked")
 
-    def on_choice4_clicked(self, *args):
-        print ("d")
-
+def choice3_clicked(data): 
+    print("clicked")
 
 
 
@@ -105,25 +99,30 @@ if __name__ == "__main__":
     
     builder = gtk.Builder()
     builder.add_from_file(gladeFile)
-    builder.connect_signals(Handler())
 
     window = builder.get_object("mainWindow")
     window.show_all()
+    window.connect("destroy", gtk.main_quit)
 
     question_label = builder.get_object("gtkQuestionLabel")
     question_label.set_text(str(json_data["question"]))
 
     choice1_button = builder.get_object("choice1")
     choice1_button.set_label(str(shuffled_answers[0][0]))
-
+    choice1_button.connect("clicked", choice1_clicked)
+   
     choice2_button = builder.get_object("choice2")
     choice2_button.set_label(str(shuffled_answers[1][0]))
+    choice2_button.connect("clicked", choice2_clicked)
 
     choice3_button = builder.get_object("choice3")
     choice3_button.set_label(str(shuffled_answers[2][0]))
+    choice3_button.connect("clicked", choice3_clicked)
 
     choice4_button = builder.get_object("choice4")
     choice4_button.set_label(str(shuffled_answers[3][0]))
+    choice4_button.connect("clicked", choice4_clicked)
+
 
 
     gtk.main()
