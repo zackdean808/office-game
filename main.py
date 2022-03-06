@@ -49,29 +49,6 @@ def shuffle_answers(json_data):
     return shuffled_list
 
 
-def validate_answer(ql, user_choice):
-    # I have no idea what ql means... 
-    if (user_choice == 1):
-        if (ql[0][1] == True):
-            print("Correct")
-        else:
-            print ("False")
-    elif (user_choice == 2):
-        if (ql[1][1] == True):
-            print("Correct")
-        else:
-            print ("False")
-    elif (user_choice == 3):
-        if (ql[2][1] == True):
-            print("Correct")
-        else:
-            print ("False")
-    elif (user_choice == 4):
-        if (ql[3][1] == True):
-            print("Correct")
-        else:
-            print ("False")
-
 def choice1_clicked(widget, ql):
     if (ql[0][1] == True):
         print("Correct")
@@ -137,5 +114,4 @@ if __name__ == "__main__":
     choice4_button.set_label(str(shuffled_answers[3][0]))
     choice4_button.connect("clicked", choice4_clicked, shuffled_answers)
     
-
     gtk.main()
