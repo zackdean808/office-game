@@ -113,7 +113,6 @@ if __name__ == "__main__":
     question_label = builder.get_object("gtkQuestionLabel")
     question_label.set_text(str(json_data["question"]))
 
-
     choice1_button = builder.get_object("choice1")
     choice1_button.set_label(str(shuffled_answers[0][0]))
 
