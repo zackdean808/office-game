@@ -60,21 +60,18 @@ def choice2_clicked(widget, ql):
         print("Correct")
     else:
         print ("False")
-    return 2 
 
 def choice3_clicked(widget, ql): 
     if (ql[2][1] == True):
         print("Correct")
     else:
         print ("False")
-    return 3
 
 def choice4_clicked(widget, ql): 
     if (ql[3][1] == True):
         print("Correct")
     else:
         print ("False")
-    return 4
 
 
 if __name__ == "__main__":
@@ -101,7 +98,7 @@ if __name__ == "__main__":
     choice1_button = builder.get_object("choice1")
     choice1_button.set_label(str(shuffled_answers[0][0]))
     choice1_button.connect("clicked", choice1_clicked, shuffled_answers)
-   
+
     choice2_button = builder.get_object("choice2")
     choice2_button.set_label(str(shuffled_answers[1][0]))
     choice2_button.connect("clicked", choice2_clicked, shuffled_answers)
