@@ -72,18 +72,32 @@ def validate_answer(ql, user_choice):
         else:
             print ("False")
 
-def choice1_clicked(data): 
-    print("clicked")
+def choice1_clicked(widget, ql):
+    if (ql[0][1] == True):
+        print("Correct")
+    else:
+        print ("False")
 
-def choice2_clicked(data): 
-    print("clicked")
+def choice2_clicked(widget, ql): 
+    if (ql[1][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+    return 2 
 
-def choice3_clicked(data): 
-    print("clicked")
+def choice3_clicked(widget, ql): 
+    if (ql[2][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+    return 3
 
-def choice4_clicked(data): 
-    print("clicked")
-
+def choice4_clicked(widget, ql): 
+    if (ql[3][1] == True):
+        print("Correct")
+    else:
+        print ("False")
+    return 4
 
 
 if __name__ == "__main__":
@@ -109,26 +123,19 @@ if __name__ == "__main__":
 
     choice1_button = builder.get_object("choice1")
     choice1_button.set_label(str(shuffled_answers[0][0]))
-    choice1_button.connect("clicked", choice1_clicked)
+    choice1_button.connect("clicked", choice1_clicked, shuffled_answers)
    
     choice2_button = builder.get_object("choice2")
     choice2_button.set_label(str(shuffled_answers[1][0]))
-    choice2_button.connect("clicked", choice2_clicked)
-
+    choice2_button.connect("clicked", choice2_clicked, shuffled_answers)
+   
     choice3_button = builder.get_object("choice3")
     choice3_button.set_label(str(shuffled_answers[2][0]))
-    choice3_button.connect("clicked", choice3_clicked)
+    choice3_button.connect("clicked", choice3_clicked, shuffled_answers)
 
     choice4_button = builder.get_object("choice4")
     choice4_button.set_label(str(shuffled_answers[3][0]))
-    choice4_button.connect("clicked", choice4_clicked)
-
-
+    choice4_button.connect("clicked", choice4_clicked, shuffled_answers)
+    
 
     gtk.main()
-    
-
-
-    #validate_answer(shuffled_answers,user_choice)
-
-    
